@@ -4,20 +4,34 @@ import "./MyTable.css";
 export default class MyTable extends React.Component {
     state = {
         style:{
-            border: '1px solid black',
-            borderCollapse: 'collapse'
-        }
+            table:
+                {
+                    border: '1px solid black',
+                    borderCollapse: 'collapse'
+                },
+                td:
+                {
+                    border: '1px solid black',
+                    borderCollapse: 'collapse',
+                }
+        },
+        rows: []
     }
     render() {
         return <div>
-            <table style={this.state.style}>
+            <table style={this.state.style.table}>
                 <tbody>
                     <tr>
-                        <td style={this.state.style}></td>
-                        <td style={this.state.style}></td>
+                        <td style={this.state.style.td}></td>
+                        <td style={this.state.style.td}></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+    }
+    componentDidMount(){
+        const words = this.props.data.split(" ")
+        console.log('words', words)
+        this.setState({rows: words})
     }
 }
