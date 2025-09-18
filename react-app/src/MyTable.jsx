@@ -19,6 +19,14 @@ export default class MyTable extends React.Component {
         },
         rows: []
     }
+
+    handelDelClick = function(rowIdx) {
+        const oldRows = this.state.rows.slice()
+        const newRows = [...oldRows]
+        newRows.splice(rowIdx, 1)
+        this.setState({rows: [...newRows]})
+    }
+
     render() {
         return <div>
             <table style={this.state.style.table}>
@@ -29,6 +37,9 @@ export default class MyTable extends React.Component {
                     </tr>*/}
 
                     {this.state.rows.map((word, wordIdx)=> <tr key={wordIdx} >
+                        <td>
+                            <button onClick={() => this.handelDelClick(wordIdxhu)}>del row</button>
+                        </td>
                         {[...word].map((char, charIdx) => <td key={charIdx} style={this.state.style.td}>
                             {char == '_' ? ' ': char}
                             </td>)}
