@@ -38,7 +38,7 @@ export default class MyTable extends React.Component {
 
                     {this.state.rows.map((word, wordIdx)=> <tr key={wordIdx} >
                         <td>
-                            <button onClick={() => this.handelDelClick(wordIdxhu)}>del row</button>
+                            <button onClick={() => this.handelDelClick(wordIdx)}>del row</button>
                         </td>
                         {[...word].map((char, charIdx) => <td key={charIdx} style={this.state.style.td}>
                             {char == '_' ? ' ': char}
