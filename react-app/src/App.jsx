@@ -5,7 +5,7 @@ import "./App.css";
 export default class App extends React.Component {
   render() {
     return <div>
-      <MyTable data='utalom a ciganyokat'></MyTable>
+      <MyTable data='c_g_ny_k zs_d_k n_gg_r_k'></MyTable>
     </div>
   }
 }
